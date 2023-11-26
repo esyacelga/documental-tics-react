@@ -1,7 +1,11 @@
+import {router} from "./adapters/router-app.tsx";
+import {RouterProvider} from "react-router-dom";
+import {AppTheme} from "./components/theme-manager";
+
 export const RootApp = () => {
     return (
-        <>
-            <h1>Hola mundo</h1>
-        </>
+        <AppTheme>
+            <RouterProvider router={router}></RouterProvider>
+        </AppTheme>
     )
 }
