@@ -1,12 +1,11 @@
 import {CssBaseline, ThemeProvider} from "@mui/material";
-import {PurpleTheme} from "./purpleTheme.ts";
+import DarkTheme from "./dark-theme.ts";
 
 export const AppTheme = ({children}: any) => {
     return (
-        <ThemeProvider theme={PurpleTheme}>
-            <CssBaseline>
-                {children}
-            </CssBaseline>
+        <ThemeProvider theme={DarkTheme}>
+            <CssBaseline/>
+            {children}
         </ThemeProvider>
     )
 }
