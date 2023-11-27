@@ -4,7 +4,7 @@ import {NavBar} from "./nav-bar.tsx";
 import {SideBar} from "./side-bar.tsx";
 
 const drawerWidth = 280;
-export const RootLayout = ({children}: any) => {
+export const    RootLayout = ({children}: any) => {
     return (
         <Box sx={{display: 'flex'}}>
 
