@@ -1,4 +1,6 @@
 {
-  "comon.label.hi": "¡Hola!",
-  "welcome": "Bienvenido a mi aplicación."
+  "common.label.hi": "¡Hola!",
+  "common.session.initiate": "Iniciar seccion",
+  "common.user.name": "Nombre de usuario",
+  "common.user.password": "Clave"
 }

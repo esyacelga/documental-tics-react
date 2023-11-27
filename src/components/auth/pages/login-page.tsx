@@ -1,12 +1,14 @@
 import {Button, Container, TextField} from '@mui/material'
 import {AuthLayout} from "../layout/auth-layout.tsx";
+import {useTranslation} from "react-i18next";
 
 export const LoginPage = () => {
-    // @ts-ignore
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const {t} = useTranslation();
 
-        // Lógica para el envío del formulario (autenticación, etc.)
+
+    const handleSubmit = (eveto: React.FormEvent<HTMLFormElement>) => {
+        eveto.preventDefault();
+        console.log(eveto)
     };
     return (
         <AuthLayout title="Login">
@@ -18,7 +20,7 @@ export const LoginPage = () => {
                         required
                         fullWidth
                         id="username"
-                        label="Usuario"
+                        label={t('common.user.name')}
                         name="username"
                     />
                     <TextField
@@ -27,7 +29,7 @@ export const LoginPage = () => {
                         required
                         fullWidth
                         name="password"
-                        label="Contraseña"
+                        label={t('common.user.password')}
                         type="password"
                         id="password"
                     />
@@ -38,7 +40,7 @@ export const LoginPage = () => {
                         color="primary"
                         sx={{mt: 3, mb: 2}}
                     >
-                        Iniciar sesión
+                        {t('common.session.initiate')}
                     </Button>
                 </form>
             </Container>
