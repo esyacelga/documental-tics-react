@@ -1,4 +1,4 @@
-import {router} from "../../adapters/router-app.tsx";
+import {router} from "../../infrastructure/routing/router-app.tsx";
 import {RouterProvider} from "react-router-dom";
 import {AppTheme} from "../theme-manager";
 import i18n from "../../infrastructure/i18n.ts";
