@@ -1,6 +1,4 @@
 {
-  "translation": {
-    "hello": "¡Hola!",
-    "welcome": "Bienvenido a mi aplicación."
-  }
+  "comon.label.hi": "¡Hola!",
+  "welcome": "Bienvenido a mi aplicación."
 }

@@ -17,8 +17,6 @@ import {useTranslation} from 'react-i18next';
 
 export const SideBar = ({drawerWidth = 240}) => {
     const {t} = useTranslation();
-    //i18n.changeLanguage('es');
-
     return (
         <Box
             component='nav'
@@ -35,7 +33,7 @@ export const SideBar = ({drawerWidth = 240}) => {
                 <Toolbar>
                     <Typography variant='h6' noWrap component='div'>
                         Fernando Herrera...
-                        <h1>{t('hello')}</h1>
+                        <h1>{t('comon.label.hi')}</h1>
                     </Typography>
                 </Toolbar>
                 <Divider/>

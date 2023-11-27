@@ -1,6 +1,4 @@
 {
-  "en": {
-    "hello": "Hello!",
-    "welcome": "Welcome to my app."
-  }
+  "comon.label.hi": "¡Hi!",
+  "welcome": "Bienvenido a mi aplicación."
 }
