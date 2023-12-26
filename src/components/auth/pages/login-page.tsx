@@ -2,15 +2,18 @@ import {Button, Container, Grid, TextField, Typography} from '@mui/material'
 import {AuthLayout} from "../layout/auth-layout.tsx";
 import {useTranslation} from "react-i18next";
 import {useForm} from "../../../infrastructure";
-import React from "react";
+import React, {useMemo} from "react";
 import {Google} from "@mui/icons-material";
-import {useDispatch} from "react-redux";
-import {checkingAuthentication} from "../thunks/authentication.ts";
+import {useDispatch, useSelector} from "react-redux";
+import {checkingAuthentication, startGoogleSignIn} from "../thunks";
 
 export const LoginPage = () => {
     const {t} = useTranslation();
 
     const dispatch = useDispatch();
+
+    // @ts-ignore
+    const {status} = useSelector(state => state.auth)
 
 
     // @ts-ignore
@@ -26,13 +29,15 @@ export const LoginPage = () => {
         // @ts-ignore
         dispatch(checkingAuthentication())
     };
-    // @ts-ignore
-    const onGoogleSubmit = (evento) => {
+    const onGoogleSubmit = (evento: any) => {
         evento.preventDefault();
-        console.log(email, password);
         // @ts-ignore
-        dispatch(checkingAuthentication())
+        dispatch(startGoogleSignIn())
     };
+    const isAuthentication = useMemo(() => {
+        return status === 'checking';
+    }, [status]);
+    console.log(isAuthentication)
     return (
         <AuthLayout title="Login">
             <Container maxWidth="xs">
@@ -71,7 +76,9 @@ export const LoginPage = () => {
                     </Button>*/}
                     <Grid container spacing={2} sx={{mb: 2, mt: 1}}>
                         <Grid item xs={12} sm={6}>
-                            <Button type="submit" variant='contained' fullWidth>
+                            <Button type="submit"
+                                    disabled={isAuthentication}
+                                    variant='contained' fullWidth>
                                 <Typography sx={{ml: 1}}>Login</Typography>
                             </Button>
                         </Grid>
@@ -79,6 +86,7 @@ export const LoginPage = () => {
                             <Button
                                 variant='contained'
                                 fullWidth
+                                disabled={isAuthentication}
                                 onClick={onGoogleSubmit}
                             >
                                 <Google>
