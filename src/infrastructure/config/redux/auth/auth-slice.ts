@@ -5,12 +5,12 @@ interface AuthState {
     uid: null,
     email: null,
     displayName: null,
-    phiteURL: null,
+    photoURL: null,
     errorMessage: null
 }
 
 const initialState: AuthState = {
-    displayName: null, email: null, errorMessage: null, phiteURL: null, status: "not-authenticated", uid: null
+    displayName: null, email: null, errorMessage: null, photoURL: null, status: "not-authenticated", uid: null
 
 };
 export const authSlice = createSlice({
@@ -23,7 +23,9 @@ export const authSlice = createSlice({
         logout: () => {
 
         },
-        checkingCredentials: () => {
+        checkingCredentials: (state) => {
+            // @ts-ignore
+            state.status='checking'
 
         }
     }

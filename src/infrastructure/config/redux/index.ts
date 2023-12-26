@@ -1,2 +1,2 @@
-export * from './auth/auth-slice.ts'
+export * from './auth/index.ts'
 export * from './store.ts'
